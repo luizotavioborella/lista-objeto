@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fazenda Virtual</title>
     <script>
         var fazenda = {
             animais: [],
-
             cadastrar() {
                 this.animais.push({
                     nome: prompt("Nome:"),
@@ -15,8 +14,8 @@
                     idade: Number(prompt("Idade:")),
                     qtd: Number(prompt("Quantidade produzida:"))
                 })
+                alert("Animal cadastrado com sucesso!")
             },
-
             remover() {
                 var nome = prompt("Nome para remover:")
                 var novaLista = []
@@ -27,20 +26,27 @@
                 })
                 this.animais = novaLista
             },
-
             buscar() {
                 var nome = prompt("Buscar nome:")
+                var encontrado = false
                 this.animais.forEach(function(animal) {
                     if (animal.nome == nome) {
-                        alert(animal.nome + " - " + animal.especie + " - Qtd: " + animal.qtd)
+                        alert(
+                            "Nome: " + animal.nome +
+                            "\nEspécie: " + animal.especie +
+                            "\nIdade: " + animal.idade +
+                            "\nQuantidade produzida: " + animal.qtd
+                        )
+                        encontrado = true
                     }
                 })
+                if (encontrado == false) {
+                    alert("Animal não encontrado!")
+                }
             },
-
             alimentarTodos() {
                 alert("Todos os " + this.animais.length + " animais foram alimentados!")
             },
-
             calcularProducaoTotal() {
                 var total = 0
                 this.animais.forEach(function(animal) {
@@ -48,15 +54,37 @@
                 })
                 alert("Produção total: " + total)
             }
-    }
-    fazenda.cadastrar()
-    fazenda.remover()
-    fazenda.buscar()
-    fazenda.alimentarTodos()
-    fazenda.calcularProducaoTotal()
+        }
+        var opcao = ""
+        while (opcao != "0") {
+            opcao = prompt(
+                "1 - Cadastrar animal" +
+                "\n2 - Remover animal" +
+                "\n3 - Buscar animal" +
+                "\n4 - Alimentar todos" +
+                "\n5 - Calcular produção total" +
+                "\n0 - Sair"
+            )
+            if (opcao == "1") {
+                fazenda.cadastrar()
+            }
+            if (opcao == "2") {
+                fazenda.remover()
+            }
+            if (opcao == "3") {
+                fazenda.buscar()
+            }
+            if (opcao == "4") {
+                fazenda.alimentarTodos()
+            }
+            if (opcao == "5") {
+                fazenda.calcularProducaoTotal()
+            }
+        }
     </script>
 </head>
+
 <body>
-    
+
 </body>
 </html>
