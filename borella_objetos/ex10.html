@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Crie um objeto contendo título, duração em minutos e classificação indicativa. 
+        // Adicione métodos para solicitar os dados, converter a duração para horas e minutos e verificar se uma 
+        // pessoa pode assistir ao filme com base em sua idade.
+
+        var filme = {
+            nome: "",
+            duracao_min: 0,
+            classificao: 0,
+        solicitarDados(){
+            this.nome = prompt("Digite o nome do filme: ")
+            this.duracao_min = Number(prompt("Digite a duração do filme em minutos: "))
+            this.classificacao = Number(prompt("Digite qual a classificação indicativa desse filme "))
+        },
+        converterDuracao(){
+        var horas = this.duracao_min / 60
+        var minutos = this.duracao_min % 60
+        alert("O filme tem " + horas + " hora(s) e " + minutos + " minuto(s).")
+    },
+
+        verificarIdade(){
+            var idade = Number(prompt("Digite a sua idade: "))
+            if (idade >= this.classificacao){
+                alert("Você pode assistir ao filme!")
+            } else {
+                alert("Você não tem idade suficiente para assistir a este filme.")
+            }
+        }
+    }
+
+    filme.solicitarDados()
+    filme.converterDuracao()
+    filme.verificarIdade()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    var carro = {
+        modelo: "Civic",
+        combustivel: 10, 
+        consumoPorKm: 12,
+
+        abastecer(litros) {
+            if (litros > 0) {
+                this.combustivel = this.combustivel + litros
+                alert("Abastecido com " + litros + "L. Combustível atual: " + this.combustivel + "L.")
+            } else {
+                alert("Quantidade para abastecer deve ser maior que zero.")
+            }
+        },
+
+        consultarCombustivel() {
+            alert("Modelo: " + this.modelo + "\nCombustível disponível: " + this.combustivel + "L")
+        },
+
+        dirigir(distanciaKm) {
+            // Calcula quantos litros são necessários para a distância
+            var litrosNecessarios = distanciaKm / this.consumoPorKm
+
+            if (litrosNecessarios <= this.combustivel) {
+                this.combustivel = this.combustivel - litrosNecessarios
+                alert("Você percorreu " + distanciaKm + " km. Combustível restante: " + this.combustivel + "L.")
+            } else {
+                var distanciaPossivel = this.combustivel * this.consumoPorKm
+                alert("Combustível insuficiente! Você só tem " + this.combustivel + "L e precisa de " + litrosNecessarios + "L.\n" +
+                      "Com o saldo atual você consegue andar no máximo " + distanciaPossivel + " km.")
+            }
+        }
+    }
+
+    
+    carro.consultarCombustivel() 
+    carro.dirigir(150)           
+    carro.abastecer(20)          
+    carro.dirigir(150)           
+    carro.consultarCombustivel()
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

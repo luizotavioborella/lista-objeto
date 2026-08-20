@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script>
+        //Crie um objeto contendo nome, salário e porcentagem de aumento. 
+        // Adicione métodos para solicitar os dados, calcular o aumento salarial e exibir o novo salário.
+        var salario = {
+        nome: "",
+        salario: 0,
+        porcentagem: 0,
+        solicitarDados() {
+            this.nome = prompt("Digite seu nome:")
+            this.salario = Number(prompt("Digite seu salário:"))
+            this.porcentagem = Number(prompt("Digite a porcentagem de aumento:"))
+            var aumento = (this.salario * this.porcentagem) / 100
+            var novo_salario = this.salario + aumento
+            alert("seu novo salário é: R$ " + novo_salario)
+            }
+        }
+
+        salario.solicitarDados()
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

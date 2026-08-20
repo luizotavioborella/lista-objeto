@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício</title>
+    <script>
+        var aluno = {
+            nome: "",
+            nota1: 0,
+            nota2: 0,
+
+            solicitarDados() {
+                this.nome = prompt("Digite o nome do aluno:")
+                this.nota1 = Number(prompt("Digite a primeira nota:"))
+                this.nota2 = Number(prompt("Digite a segunda nota:"))
+            },
+            calcularMedia() {
+                var media = (this.nota1 + this.nota2) / 2
+                alert("Média: " + media)
+                if (media >= 6) {
+                    alert("Aluno aprovado!")
+                } else {
+                    alert("Aluno reprovado!")
+                }
+            }
+        }
+        aluno.solicitarDados()
+        aluno.calcularMedia()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

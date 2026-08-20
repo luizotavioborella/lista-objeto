@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    var hospital = {
+        atendimentos: [],
+
+        cadastrar() {
+            this.atendimentos.push({
+                nome: prompt("Nome do animal:"),
+                especie: prompt("Espécie:"),
+                responsavel: prompt("Responsável:"),
+                urgencia: prompt("Urgência (Alta/Média/Baixa):"),
+                situacao: "Em atendimento"
+            })
+        },
+
+        finalizar() {
+            var nome = prompt("Nome para finalizar:")
+            this.atendimentos.forEach(function(animal) {
+                if (animal.nome == nome) {
+                    animal.situacao = "Finalizado"
+                }
+            })
+        },
+
+        buscar() {
+            var nome = prompt("Buscar nome:")
+            this.atendimentos.forEach(function(animal) {
+                if (animal.nome == nome) {
+                    alert(animal.nome + " - " + animal.urgencia + " - " + animal.situacao)
+                }
+            })
+        },
+
+        mostrarPorUrgencia() {
+            var urg = prompt("Digite a urgência (Alta/Média/Baixa):")
+            this.atendimentos.forEach(function(animal) {
+                if (animal.urgencia == urg) {
+                    alert(animal.nome + " | Status: " + animal.situacao)
+                }
+            })
+        }
+    }
+</script>
+    
+</head>
+<body>
+    
+</body>
+</html>

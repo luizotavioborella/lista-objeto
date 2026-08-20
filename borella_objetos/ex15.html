@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var sistema = {
+            candidatos: [],
+            eleitores: [],
+            cadastrar() {
+                this.candidatos.push({
+                    nome: prompt("Nome do candidato:"),
+                    votos: 0
+                })
+            },
+            votar() {
+                var eleitor = prompt("Nome do eleitor:")
+                var nome = prompt("Nome do candidato:")
+                if (this.eleitores.includes(eleitor)) {
+                    alert("Esse eleitor já votou!")
+                } else {
+                    this.candidatos.forEach(function(candidato) {
+                        if (candidato.nome == nome) {
+                            candidato.votos = candidato.votos + 1
+                            sistema.eleitores.push(eleitor)
+                            alert("Voto registrado!")
+                        }
+                    })
+                }
+            },
+            resultado() {
+                this.candidatos.forEach(function(candidato) {
+                    alert(candidato.nome + ": " + candidato.votos + " votos")
+                })
+            },
+            vencedor() {
+                var maior = this.candidatos[0]
+                this.candidatos.forEach(function(candidato) {
+                    if (candidato.votos > maior.votos) {
+                        maior = candidato
+                    }
+                })
+                alert("Vencedor: " + maior.nome)
+            }
+        }
+        sistema.cadastrar()
+        sistema.cadastrar()
+        sistema.cadastrar()
+        sistema.votar()
+        sistema.votar()
+        sistema.votar()
+        sistema.resultado()
+        sistema.vencedor()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

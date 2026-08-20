@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Crie um objeto contendo nome do produto, quantidade disponível e preço unitário. 
+        // Adicione métodos para adicionar produtos ao estoque, realizar uma venda e exibir os dados do estoque.
+        //  Uma venda não pode ser realizada quando a quantidade solicitada for maior que a disponível.
+        var produto = {
+        nome: "Camiseta",
+        quantidade: 15,
+        precoUnitario: 50,
+
+        adicionarEstoque(qtd) {
+            if (qtd > 0) {
+                this.quantidade = this.quantidade + qtd
+                alert("Foram adicionadas " + qtd + " unidades. Estoque atual: " + this.quantidade)
+            } else {
+                alert("A quantidade para adicionar deve ser maior que zero.")
+            }
+        },
+        vender(qtd) {
+            if (qtd <= this.quantidade) {
+                this.quantidade = this.quantidade - qtd
+                var totalVenda = qtd * this.precoUnitario
+                alert("Venda realizada! " + qtd + " unidades vendidas.\nTotal da compra: R$ " + totalVenda + "\nEstoque restante: " + this.quantidade)
+            } else {
+                alert("Venda não realizada! Quantidade solicitada (" + qtd + ") é maior que a disponível em estoque (" + this.quantidade + ").")
+            }
+        },
+        exibirEstoque() {
+            alert("--- DATAS DO ESTOQUE ---\n" + "Produto: " + this.nome + "\n" + "Quantidade disponível: " + this.quantidade + "\n" + "Preço unitário: R$ " + this.precoUnitario)
+        }
+    }
+
+
+    produto.exibirEstoque()      
+    produto.vender(20)           
+    produto.vender(5)            
+    produto.adicionarEstoque(10) 
+    produto.exibirEstoque()      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

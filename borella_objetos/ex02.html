@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício</title>
+    <script>
+        var produto = {
+            nome: "",
+            preco: 0,
+            quantidade: 0,
+            
+            solicitarDados () {
+                this.nome = prompt("Insira o nome do produto:")
+                this.preco = Number(prompt("Insira o preço do produto:"))
+                this.quantidade = Number(prompt("Insira a quantidade:"))
+            },
+
+            calculo() {
+                var total = this.preco * this.quantidade
+                alert("Valor total: R$" + total)
+            },
+
+            resumo() {
+                alert("Produto: " + this.nome + "\nPreço: R$" + this.preco + "\nQuantidade: " + this.quantidade)
+            }
+        }
+        
+        produto.solicitarDados()
+        produto.calculo()
+        produto.resumo()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

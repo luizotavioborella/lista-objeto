@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Crie um objeto contendo o nome do titular e o saldo da conta. Adicione métodos para depositar, sacar e consultar o saldo. O saque não deve ser realizado quando o valor for maior que o saldo disponível.
+
+        var conta = {
+         nome_titular:this.nome_titular,
+         saldo: 0,
+         sacar: this.sacar,
+         total_depois_saque: this.total_depois,
+         depositar: this.depositar,
+         total_depois_depositar: this.total_depois_depositar,
+         solicitarDados(){
+            var nome = prompt("Digite o nome do titular: ")
+            var saldo = Number(prompt("Digite saldo da conta: "))
+            var depositar = Number(prompt("Digite a quantidade que você quer depositar "))
+            var total_depois_depositar = (saldo + depositar )
+            alert("O saldo agora é:" + total_depois_depositar )
+            var sacar = Number(prompt("Digite quanto você quer sacar da conta: "))
+            if(sacar > saldo){
+                alert("Você não pode sacar mais do que o saldo") 
+            } else{
+                var total_depois_saque = (total_depois_depositar - sacar)
+                alert(" O saldo da conta é " + total_depois_saque)
+                alert("Saque de: " + sacar + " R$ , realizado com sucesso")
+            }
+            
+        }
+    }
+        console.log(conta)
+        conta.solicitarDados()
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

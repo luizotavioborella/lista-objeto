@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Crie um objeto contendo nome, quantidade de vida e força de ataque. 
+        // Adicione métodos para atacar, receber dano e mostrar o estado atual do personagem. 
+        // A vida do personagem não pode ficar abaixo de zero.
+
+            var pokemon = {
+            nome: "Treecko",
+            durabilidade: 120,
+            forca: 30,
+
+            ataque() {
+                if (this.durabilidade > 0) {
+                    this.durabilidade = this.durabilidade - 2
+                    this.forca = this.forca - 1
+                    alert("O pokemon está atacando, força atual: " + this.forca + " Durabilidade: " + this.durabilidade)
+                } else {
+                    alert("Pokemon sem força e energia, ele não pode continuar")
+                }
+            },
+
+            dano() {
+                if (this.durabilidade > 0) {
+                    this.durabilidade = this.durabilidade - 5
+                    alert("O Pokemon foi atacado, durabilidade atual: " + this.durabilidade)
+                } else {
+                    alert("Pokemon sem força e energia, ele não pode continuar")
+                }
+            }
+        }
+
+        console.log(pokemon)
+        pokemon.ataque()
+        pokemon.dano()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        var perfil = {
+            usuario: "claudia",
+            seguidores: ["Ana"],
+            publicacoes: [],
+
+            publicar() {
+                var texto = prompt("Texto da publicação:")
+                this.publicacoes.push({ texto: texto, curtidas: 0 })
+            },
+            excluir() {
+                var txt = prompt("Texto para excluir:")
+                this.publicacoes = this.publicacoes.filter(p => p.texto != txt)
+            },
+            seguir() {
+                this.seguidores.push(prompt("Nome para seguir:"))
+            },
+            deixarDeSeguir() {
+                var nome = prompt("Nome para deixar de seguir:")
+                this.seguidores = this.seguidores.filter(s => s != nome)
+            },
+            curtir() {
+                var txt = prompt("Texto para curtir:")
+                this.publicacoes.forEach(p => { if(p.texto == txt) p.curtidas++ })
+            },
+            maisCurtida() {
+                var mais = this.publicacoes[0]
+                this.publicacoes.forEach(p => { if(p.curtidas > mais.curtidas) mais = p })
+                alert("Mais curtida: " + mais.texto + " (" + mais.curtidas + " curtidas)")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

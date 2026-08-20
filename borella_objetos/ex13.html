@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var fazenda = {
+            animais: [],
+
+            cadastrar() {
+                this.animais.push({
+                    nome: prompt("Nome:"),
+                    especie: prompt("Espécie:"),
+                    idade: Number(prompt("Idade:")),
+                    qtd: Number(prompt("Quantidade produzida:"))
+                })
+            },
+
+            remover() {
+                var nome = prompt("Nome para remover:")
+                var novaLista = []
+                this.animais.forEach(function(animal) {
+                    if (animal.nome != nome) {
+                        novaLista.push(animal)
+                    }
+                })
+                this.animais = novaLista
+            },
+
+            buscar() {
+                var nome = prompt("Buscar nome:")
+                this.animais.forEach(function(animal) {
+                    if (animal.nome == nome) {
+                        alert(animal.nome + " - " + animal.especie + " - Qtd: " + animal.qtd)
+                    }
+                })
+            },
+
+            alimentarTodos() {
+                alert("Todos os " + this.animais.length + " animais foram alimentados!")
+            },
+
+            calcularProducaoTotal() {
+                var total = 0
+                this.animais.forEach(function(animal) {
+                    total = total + animal.qtd
+                })
+                alert("Produção total: " + total)
+            }
+    }
+    fazenda.cadastrar()
+    fazenda.remover()
+    fazenda.buscar()
+    fazenda.alimentarTodos()
+    fazenda.calcularProducaoTotal()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
